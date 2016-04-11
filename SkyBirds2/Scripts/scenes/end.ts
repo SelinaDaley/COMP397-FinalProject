@@ -36,7 +36,7 @@ module scenes {
             //Add Menu Label
             this._endLabel = new objects.Label(
                 "GAME OVER", "60px Consolas",
-                "#ffff00",
+                "#0000ff",
                 config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 160, true);
             this.addChild(this._endLabel);
 

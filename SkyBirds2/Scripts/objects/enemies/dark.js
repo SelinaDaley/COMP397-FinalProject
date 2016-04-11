@@ -52,6 +52,6 @@ var objects;
             this._checkBounds(this._leftBounds);
         };
         return Dark;
-    })(objects.GameObject);
+    })(objects.SpriteGameObject);
     objects.Dark = Dark;
 })(objects || (objects = {}));

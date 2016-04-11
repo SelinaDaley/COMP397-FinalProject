@@ -5,6 +5,8 @@ var assets: createjs.LoadQueue;
 var canvas: HTMLElement;
 var stage: createjs.Stage;
 var stats: Stats;
+var textureAtlas: createjs.SpriteSheet;
+var textureAtlas2: createjs.SpriteSheet;
 
 var currentScene: objects.Scene;
 var scene: number;
@@ -104,17 +106,17 @@ var atlas = {
 
     "eagle": {
         "frames": [11, 12, 13, 9, 4, 10, 14, 16],
-        "speed": 0.5
+        "speed": 0.20
     },  
  
     "alien": {
         "frames": [25, 26, 29, 22, 21, 23, 31, 32],
-        "speed": 0.5
+        "speed": 0.20
     },  
 
     "dark": {
         "frames": [42, 41, 36, 44, 35, 45, 37, 43],
-        "speed": 0.5
+        "speed": 0.25
     },  
 
     "bomb": {
@@ -168,6 +170,12 @@ function preload() {
 }
 
 function init(): void {
+    // instantiate textureAtlas
+    textureAtlas = new createjs.SpriteSheet(atlas);
+
+    // instantiate textureAtlas
+    //textureAtlas2 = new createjs.SpriteSheet(atlas2);
+
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
     

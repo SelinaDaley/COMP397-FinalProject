@@ -13,7 +13,7 @@ var objects;
             _super.call(this, "alien");
             this._firstSet = true;
             this._num = num;
-            this._speed.x -= 5; //enemy speed
+            this._speed.x -= 6; //enemy speed
             this._reset(this._rightBounds);
             this.name = "alien";
             //this.soundString = "yay";
@@ -46,6 +46,6 @@ var objects;
             this._checkBounds(this._leftBounds);
         };
         return Alien;
-    })(objects.GameObject);
+    })(objects.SpriteGameObject);
     objects.Alien = Alien;
 })(objects || (objects = {}));

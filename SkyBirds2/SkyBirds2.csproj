@@ -122,6 +122,7 @@
     <Content Include="Scripts\objects\label.js.map" />
     <Content Include="Scripts\objects\player.js.map" />
     <Content Include="Scripts\objects\scene.js.map" />
+    <Content Include="Scripts\objects\spritegameobject.js" />
     <Content Include="Scripts\scenes\end.js.map" />
     <Content Include="Scripts\scenes\menu.js.map" />
     <Content Include="Scripts\objects\items\life.js.map" />
@@ -232,6 +233,7 @@
     <TypeScriptCompile Include="Scripts\objects\enemies\dark.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\items\life.ts" />
+    <TypeScriptCompile Include="Scripts\objects\spritegameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\label.ts" />
     <TypeScriptCompile Include="Scripts\objects\player.ts" />
     <TypeScriptCompile Include="Scripts\objects\scene.ts" />

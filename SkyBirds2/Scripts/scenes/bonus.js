@@ -52,10 +52,10 @@ var scenes;
             this._player = new objects.Player();
             this.addChild(this._player);
             //added LivesLabel to the scene
-            this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#ffffff", 10, 460, false);
+            this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#000000", 10, 460, false);
             this.addChild(this._livesLabel);
             //added LivesLabel to the scene
-            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#ffffff", 290, 460, false);
+            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#000000", 290, 460, false);
             this.addChild(this._scoreLabel);
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);

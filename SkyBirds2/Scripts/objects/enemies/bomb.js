@@ -45,6 +45,6 @@ var objects;
             this._checkBounds(this._leftBounds);
         };
         return Bomb;
-    })(objects.GameObject);
+    })(objects.SpriteGameObject);
     objects.Bomb = Bomb;
 })(objects || (objects = {}));

@@ -9,7 +9,7 @@ var objects;
     var Player = (function (_super) {
         __extends(Player, _super);
         function Player() {
-            _super.call(this, assets.getResult("hero"));
+            _super.call(this, textureAtlas, "eagle");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
@@ -46,6 +46,6 @@ var objects;
             this._checkBounds();
         };
         return Player;
-    })(createjs.Bitmap);
+    })(createjs.Sprite);
     objects.Player = Player;
 })(objects || (objects = {}));

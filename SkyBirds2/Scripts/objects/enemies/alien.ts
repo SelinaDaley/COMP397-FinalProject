@@ -10,7 +10,7 @@ module objects {
             super("alien");
 
             this._num = num;
-            this._speed.x -= 5; //enemy speed
+            this._speed.x -= 6; //enemy speed
             this._reset(this._rightBounds);
             this.name = "alien";
             //this.soundString = "yay";

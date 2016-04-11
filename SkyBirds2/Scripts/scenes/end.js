@@ -19,12 +19,15 @@ var scenes;
             if (scoreValue > highScoreValue) {
                 highScoreValue = scoreValue;
             }
+            // add the background image
+            this._background = new createjs.Bitmap("../../Assets/images/GameOverBackground.png");
+            this.addChild(this._background);
             // assign and play the background sound
             this._endMusic = createjs.Sound.play("endMusic");
             // Loop engine sound forever
             this._endMusic.loop = -1;
             //Add Menu Label
-            this._endLabel = new objects.Label("GAME OVER", "60px Consolas", "#ffff00", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 160, true);
+            this._endLabel = new objects.Label("GAME OVER", "60px Consolas", "#0000ff", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 160, true);
             this.addChild(this._endLabel);
             //Add Score Label
             this._scoreLabel = new objects.Label("Your Score: " + scoreValue, "40px Consolas", "#ffff00", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);

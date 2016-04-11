@@ -11,6 +11,7 @@ var scenes;
         // CONSTRUCTOR ++++++++++++++++++++++
         function Level1() {
             _super.call(this);
+            this._time = 0;
         }
         // PRIVATE METHODS
         /**
@@ -20,6 +21,7 @@ var scenes;
         Level1.prototype._updateScore = function () {
             this._livesLabel.text = "Lives: " + livesValue;
             this._scoreLabel.text = "Score: " + scoreValue;
+            this._timeLabel.text = "Time: " + Math.floor(this._time / 60);
         };
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
@@ -57,6 +59,9 @@ var scenes;
             //added LivesLabel to the scene
             this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#ffffff", 290, 460, false);
             this.addChild(this._scoreLabel);
+            //added TimeLabel to the scene
+            this._timeLabel = new objects.Label("Time: " + Math.floor(this._time / 60), "40px Consolas", "#ffffff", 590, 460, false);
+            this.addChild(this._timeLabel);
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);
             // add this scene to the global stage container
@@ -78,6 +83,7 @@ var scenes;
                 _this._collision.check(dark);
             });
             this._updateScore();
+            this._time++;
         };
         return Level1;
     })(objects.Scene);

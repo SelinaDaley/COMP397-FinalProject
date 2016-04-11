@@ -1,6 +1,6 @@
 module objects {
     // PLAYER CLASS ++++++++++++++++++++++++++++++
-    export class Player extends createjs.Bitmap {
+    export class Player extends createjs.Sprite {
         // PRIVATE INSTANCE VARIABLES
         private _leftBounds: number;
         private _rightBounds: number;
@@ -13,7 +13,7 @@ module objects {
         public gameMusic: createjs.AbstractSoundInstance;
 
         constructor() {
-            super(assets.getResult("hero"));
+            super(textureAtlas, "eagle");
 
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;

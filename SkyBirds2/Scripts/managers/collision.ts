@@ -14,7 +14,7 @@ module managers {
             return Math.sqrt(Math.pow((endPoint.x - startPoint.x), 2) + Math.pow(endPoint.y - startPoint.y, 2))
         }
 
-        public check(object: objects.GameObject) {
+        public check(object: objects.SpriteGameObject) {
             var startPoint: createjs.Point = new createjs.Point();
             var endPoint: createjs.Point = new createjs.Point();
             var playerHalfHeight: number = this._player.height * 0.5;

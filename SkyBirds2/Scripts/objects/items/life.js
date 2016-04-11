@@ -46,6 +46,6 @@ var objects;
             this._checkBounds(this._leftBounds);
         };
         return Life;
-    })(objects.GameObject);
+    })(objects.SpriteGameObject);
     objects.Life = Life;
 })(objects || (objects = {}));

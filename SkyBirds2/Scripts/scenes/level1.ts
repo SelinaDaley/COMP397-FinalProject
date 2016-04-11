@@ -12,7 +12,9 @@ module scenes {
         private _collision: managers.Collision;
         private _livesLabel: objects.Label;
         private _scoreLabel: objects.Label;
+        private _timeLabel: objects.Label;
         private _playtime: number;
+        private _time: number = 0;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -28,6 +30,7 @@ module scenes {
         private _updateScore(): void {
             this._livesLabel.text = "Lives: " + livesValue;
             this._scoreLabel.text = "Score: " + scoreValue;
+            this._timeLabel.text = "Time: " + Math.floor(this._time / 60);
         }
         
         // PUBLIC METHODS +++++++++++++++++++++
@@ -39,6 +42,7 @@ module scenes {
             this._darkCount = 2;
             livesValue = 5;
             scoreValue = 0;
+            
             
             // Instantiate arrays
             this._aliens = new Array<objects.Alien>();
@@ -87,6 +91,15 @@ module scenes {
             );
             this.addChild(this._scoreLabel);
 
+            //added TimeLabel to the scene
+            this._timeLabel = new objects.Label(
+                "Time: " + Math.floor(this._time / 60),
+                "40px Consolas",
+                "#ffffff",
+                590, 460, false
+            );
+            this.addChild(this._timeLabel);
+
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);
             
@@ -114,8 +127,10 @@ module scenes {
                 dark.update();
                 this._collision.check(dark);
             });
-
+            
             this._updateScore();
+
+            this._time++;
         }        
         
         //EVENT HANDLERS ++++++++++++++++++++
