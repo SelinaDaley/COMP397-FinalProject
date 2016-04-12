@@ -13,7 +13,7 @@ module objects {
             this._speed.x -= Math.floor(Math.random() * 3) + 5;//6; //enemy speed
             this._reset(this._rightBounds);
             this.name = "alien";
-            this.enemyValue = 5;
+            this.enemyValue = 10;
             //this.soundString = "yay";
             console.log(this._speed.x);
         }

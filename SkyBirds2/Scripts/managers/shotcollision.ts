@@ -35,7 +35,14 @@
                         scoreValue += object.enemyValue; // add points to thte score
                         object._reset(config.Screen.WIDTH + 200);
                         this._shot._reset(config.Screen.WIDTH + 200);
-                        this._explosionMusic = createjs.Sound.play("explosionMusic");                        
+                        this._explosionMusic = createjs.Sound.play("explosionMusic");           
+                        
+                        // check if 
+                        if (scoreValue >= nextLevelValue) {
+                            nextLevelValue += 2000;
+                            scene = config.Scene.LEVEL2; // show the Leveel 2 Screen
+                            changeScene();
+                        }             
                     }
                     object.isColliding = true;
                 }

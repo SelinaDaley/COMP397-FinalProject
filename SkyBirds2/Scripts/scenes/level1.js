@@ -33,6 +33,7 @@ var scenes;
             this._shotCount = 1;
             livesValue = 5;
             scoreValue = 0;
+            nextLevelValue = 200;
             // Instantiate arrays
             this._aliens = new Array();
             this._darks = new Array();

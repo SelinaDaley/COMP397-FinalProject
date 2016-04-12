@@ -18,7 +18,7 @@ var objects;
             this._speed.x -= 7; //enemy speed
             this._reset(this._rightBounds);
             this.name = "horn";
-            this.enemyValue = 15;
+            this.enemyValue = 30;
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Horn.prototype._checkBounds = function (value) {

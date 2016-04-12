@@ -17,7 +17,7 @@ module objects {
             this._speed.x -= 7; //enemy speed
             this._reset(this._rightBounds);
             this.name = "dark";
-            this.enemyValue = 15;
+            this.enemyValue = 20;
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++

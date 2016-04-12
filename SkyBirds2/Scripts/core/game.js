@@ -10,6 +10,7 @@ var currentScene;
 var scene;
 var livesValue;
 var scoreValue;
+var nextLevelValue;
 var highScoreValue = 0;
 // Game Scenes
 var menu;

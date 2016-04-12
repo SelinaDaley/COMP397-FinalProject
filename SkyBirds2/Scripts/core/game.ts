@@ -13,6 +13,7 @@ var scene: number;
 
 var livesValue: number;
 var scoreValue: number;
+var nextLevelValue: number;
 var highScoreValue: number = 0;
 
 // Game Scenes

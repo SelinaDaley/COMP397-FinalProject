@@ -143,6 +143,10 @@
     <Content Include="Assets\images\atlas.tps" />
     <Content Include="Assets\images\atlas2.json" />
     <Content Include="Assets\images\atlas2.tps" />
+    <Content Include="Scripts\objects\enemies\horn.js.map" />
+    <Content Include="Scripts\objects\items\eshot.js.map" />
+    <Content Include="Scripts\objects\items\pshot.js.map" />
+    <Content Include="Scripts\objects\spritegameobject2.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,7 +5,6 @@ module managers {
         private _player: objects.Player;
         private _explosionMusic: createjs.AbstractSoundInstance;
 
-
         constructor(player: objects.Player) {
             this._player = player;
         }
