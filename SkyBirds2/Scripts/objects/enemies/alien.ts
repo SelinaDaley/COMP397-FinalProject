@@ -10,10 +10,12 @@ module objects {
             super("alien");
 
             this._num = num;
-            this._speed.x -= 6; //enemy speed
+            this._speed.x -= Math.floor(Math.random() * 3) + 5;//6; //enemy speed
             this._reset(this._rightBounds);
             this.name = "alien";
+            this.enemyValue = 5;
             //this.soundString = "yay";
+            console.log(this._speed.x);
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
@@ -26,7 +28,9 @@ module objects {
         }
         
         // reset the enemy offscreen
-        protected _reset(value: number): void {
+        public _reset(value: number): void {
+
+            //this._speed.x = Math.floor(Math.random() * 4) + 5;
 
             if (this._firstSet) {
                 this.x = value + (this._num * 250);
@@ -36,7 +40,7 @@ module objects {
             else {
                 this.x = value;
                 this.y = Math.floor(Math.random() * 365); 
-                scoreValue += 5;               
+                //scoreValue += 5;               
             }            
         }        
         

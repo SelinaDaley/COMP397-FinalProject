@@ -8,16 +8,16 @@ module objects {
         private _darkCount: number;
 
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        constructor(num: number, darkCount: number) {
+        constructor(num: number, enemyCount: number) {
             super("dark");
 
             this._num = num;
-            this._darkCount = darkCount;
+            this._darkCount = enemyCount;
             this._sinNum = 0;
             this._speed.x -= 7; //enemy speed
             this._reset(this._rightBounds);
             this.name = "dark";
-            //this.soundString = "yay";
+            this.enemyValue = 15;
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
@@ -30,7 +30,7 @@ module objects {
         }
         
         // reset the enemy offscreen
-        protected _reset(value: number): void {
+        public _reset(value: number): void {
 
             if (this._firstSet) {
                 this.x = value + (this._num * (1100 / this._darkCount));//550);
@@ -41,7 +41,7 @@ module objects {
             else {
                 this.x = value;
                 this.y = Math.floor(Math.random() * 175);
-                scoreValue += 15;
+                //scoreValue += 15;
                 this._sinNum = 0;
             }
         }        

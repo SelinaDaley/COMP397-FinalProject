@@ -1,6 +1,6 @@
 ﻿module objects {
-    // SPRITEGAMEOBJECT SUPER CLASS ++++++++++++++++++++++++++++++++++++
-    export class SpriteGameObject extends createjs.Sprite {
+    // SPRITEGAMEOBJECT2 SUPER CLASS ++++++++++++++++++++++++++++++++++++
+    export class SpriteGameObject2 extends createjs.Sprite {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         protected _speed: createjs.Point;
         protected _leftBounds: number;
@@ -20,7 +20,7 @@
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor(spriteString: string) {
-            super(textureAtlas, spriteString);
+            super(textureAtlas2, spriteString);
 
             this._speed = new createjs.Point(0, 0);
             this.width = this.getBounds().width;

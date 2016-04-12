@@ -9,16 +9,16 @@ var objects;
     var Dark = (function (_super) {
         __extends(Dark, _super);
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        function Dark(num, darkCount) {
+        function Dark(num, enemyCount) {
             _super.call(this, "dark");
             this._firstSet = true;
             this._num = num;
-            this._darkCount = darkCount;
+            this._darkCount = enemyCount;
             this._sinNum = 0;
             this._speed.x -= 7; //enemy speed
             this._reset(this._rightBounds);
             this.name = "dark";
-            //this.soundString = "yay";
+            this.enemyValue = 15;
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Dark.prototype._checkBounds = function (value) {
@@ -39,7 +39,7 @@ var objects;
             else {
                 this.x = value;
                 this.y = Math.floor(Math.random() * 175);
-                scoreValue += 15;
+                //scoreValue += 15;
                 this._sinNum = 0;
             }
         };

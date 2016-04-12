@@ -21,11 +21,11 @@ module scenes {
         public start(): void {
                    
             // add the background image
-            this._background = new createjs.Bitmap("../../Assets/images/bkgd.png");
+            this._background = new createjs.Bitmap(assets.getResult("bkgd"));//"../../Assets/images/bkgd.png");
             this.addChild(this._background);
 
             // add the logo image
-            this._logo = new createjs.Bitmap("../../Assets/images/logo2.png");
+            this._logo = new createjs.Bitmap(assets.getResult("logo"));//"../../Assets/images/logo2.png");
             this._logo.x = config.Screen.CENTER_X * 0.35;
             this._logo.y = 0;//config.Screen.CENTER_Y * 0.005;
             this.addChild(this._logo);

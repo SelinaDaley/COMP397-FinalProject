@@ -94,7 +94,7 @@ var atlas = {
     "animations": {
         "horn": {
             "frames": [48, 59, 46, 34, 2, 40, 47, 60],
-            "speed": 0.5
+            "speed": 0.20
         },
         "eagle": {
             "frames": [11, 12, 13, 9, 4, 10, 14, 16],
@@ -122,6 +122,84 @@ var atlas = {
         }
     }
 };
+var atlas2 = {
+    "images": [
+        "../../Assets/images/atlas2.png"
+    ],
+    "frames": [
+        [1, 1, 199, 232, 0, -1, 0],
+        [1, 235, 199, 232, 0, -1, 0],
+        [1, 469, 40, 40, 0, 0, 0],
+        [43, 469, 40, 40, 0, 0, 0],
+        [85, 469, 40, 40, 0, 0, 0],
+        [127, 469, 40, 40, 0, 0, 0],
+        [169, 469, 80, 26, 0, 0, 0],
+        [202, 1, 193, 232, 0, -1, 0],
+        [202, 235, 192, 232, 0, -1, 0],
+        [251, 469, 67, 26, 0, 0, 0],
+        [320, 469, 61, 26, 0, 0, 0],
+        [383, 469, 61, 26, 0, 0, 0],
+        [396, 235, 184, 232, 0, 0, 0],
+        [397, 1, 184, 232, 0, -1, 0],
+        [446, 469, 80, 18, 0, 0, 0],
+        [446, 489, 80, 18, 0, 0, 0],
+        [582, 235, 184, 232, 0, -1, 0],
+        [583, 1, 174, 232, 0, -1, 0],
+        [759, 1, 100, 91, 0, 0, 0],
+        [759, 94, 90, 90, 0, 0, 0],
+        [861, 1, 92, 82, 0, -4, -4],
+        [955, 1, 90, 90, 0, 0, 0],
+        [861, 85, 90, 67, 0, 0, 0],
+        [953, 93, 90, 65, 0, 0, 0],
+        [1045, 93, 40, 57, 0, 0, 0],
+        [1045, 152, 40, 57, 0, 0, 0],
+        [851, 154, 90, 65, 0, 0, 0],
+        [768, 186, 76, 81, 0, -12, -5],
+        [943, 160, 90, 65, 0, 0, 0],
+        [846, 221, 89, 65, 0, 0, 0],
+        [768, 269, 70, 69, 0, -15, -11],
+        [1035, 211, 40, 57, 0, 0, 0],
+        [937, 227, 89, 65, 0, 0, 0],
+        [1028, 270, 55, 71, 0, 0, 0],
+        [840, 288, 89, 65, 0, 0, 0],
+        [931, 294, 89, 65, 0, 0, 0],
+        [1022, 343, 62, 60, 0, 0, 0],
+        [768, 340, 62, 60, 0, 0, 0],
+        [832, 355, 82, 81, 0, -9, -5],
+        [768, 402, 61, 60, 0, 0, 0],
+        [831, 438, 58, 66, 0, 0, 0],
+        [891, 438, 58, 66, 0, 0, 0],
+        [951, 361, 61, 60, 0, 0, 0],
+        [1014, 405, 58, 60, 0, 0, 0],
+        [951, 423, 40, 57, 0, 0, 0]
+    ],
+    "animations": {
+        "eye": {
+            "frames": [12, 8, 0, 13, 17, 16, 1, 7],
+            "speed": 0.5
+        },
+        "explosion": {
+            "frames": [20, 18, 38, 27, 30],
+            "speed": 0.5
+        },
+        "chicken": {
+            "frames": [29, 32, 34, 35, 22, 23, 26, 28],
+            "speed": 0.5
+        },
+        "pBomb": {
+            "frames": [24, 25, 31, 44],
+            "speed": 0.5
+        },
+        "coin": [2],
+        "heal": [3],
+        "invincible": [4],
+        "life": [5],
+        "eShot": [14],
+        "pShot": [15],
+        "eExplosion": [19],
+        "pExplosion": [21]
+    }
+};
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
@@ -137,7 +215,6 @@ var assetData = [
     { id: "bkgd4", src: "../../Assets/images/bkgd4.png" },
     { id: "gameOver", src: "../../Assets/images/GameOverBackground.png" },
     { id: "logo", src: "../../Assets/images/logo2.png" },
-    { id: "life", src: "../../Assets/images/life2.png" },
     { id: "introMusic", src: "../../Assets/audio/8-punk-8-bit-music.mp3" },
     { id: "gameMusic", src: "../../Assets/audio/POL-starry-night-short.wav" },
     { id: "endMusic", src: "../../Assets/audio/8-bit-music.mp3" },
@@ -153,7 +230,7 @@ function init() {
     // instantiate textureAtlas
     textureAtlas = new createjs.SpriteSheet(atlas);
     // instantiate textureAtlas
-    //textureAtlas2 = new createjs.SpriteSheet(atlas2);
+    textureAtlas2 = new createjs.SpriteSheet(atlas2);
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
     // create our main display list container

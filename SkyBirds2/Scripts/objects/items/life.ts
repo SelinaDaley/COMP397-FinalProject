@@ -1,6 +1,6 @@
 module objects {
     // ALIEN CLASS ++++++++++++++++++++++++++++++++++++
-    export class Life extends objects.SpriteGameObject {
+    export class Life extends objects.SpriteGameObject2 {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         private _firstSet: boolean = true;
 
@@ -8,7 +8,7 @@ module objects {
         constructor() {
             super("life");
 
-            this._speed.x -= 4; //enemy speed
+            this._speed.x -= 8; //item speed
             this._reset(this._rightBounds);
             this.name = "life";
             //this.soundString = "yay";
@@ -23,16 +23,16 @@ module objects {
             }
         }
         
-        // reset the enemy offscreen
-        protected _reset(value: number): void {
+        // reset the item offscreen
+        public _reset(value: number): void {
 
             if (this._firstSet) {
-                this.x = value + 2000;
+                this.x = value + 4000;
                 this.y = Math.floor(Math.random() * 365);
                 this._firstSet = false;
             }
             else {
-                this.x = value + 2000;
+                this.x = value + 4000;
                 this.y = Math.floor(Math.random() * 365);
                 scoreValue += 5;
             }

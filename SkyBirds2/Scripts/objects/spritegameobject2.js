@@ -5,12 +5,12 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // SPRITEGAMEOBJECT SUPER CLASS ++++++++++++++++++++++++++++++++++++
-    var SpriteGameObject = (function (_super) {
-        __extends(SpriteGameObject, _super);
+    // SPRITEGAMEOBJECT2 SUPER CLASS ++++++++++++++++++++++++++++++++++++
+    var SpriteGameObject2 = (function (_super) {
+        __extends(SpriteGameObject2, _super);
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        function SpriteGameObject(spriteString) {
-            _super.call(this, textureAtlas, spriteString);
+        function SpriteGameObject2(spriteString) {
+            _super.call(this, textureAtlas2, spriteString);
             this._speed = new createjs.Point(0, 0);
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -23,7 +23,7 @@ var objects;
             this._rightBounds = config.Screen.WIDTH + this.width;
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        SpriteGameObject.prototype._checkBounds = function (value) {
+        SpriteGameObject2.prototype._checkBounds = function (value) {
             var resetValue = 0;
             // check if x value has met the reset criteria
             if (this.x >= value) {
@@ -31,17 +31,17 @@ var objects;
             }
         };
         // Reset the Object offscreen
-        SpriteGameObject.prototype._reset = function (value) {
+        SpriteGameObject2.prototype._reset = function (value) {
             this.x = value;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
-        SpriteGameObject.prototype.update = function () {
+        SpriteGameObject2.prototype.update = function () {
             var boundValue = 0;
             // scroll the ocean 5 px per frame
             this.x += this._speed.x;
             this._checkBounds(boundValue);
         };
-        return SpriteGameObject;
+        return SpriteGameObject2;
     })(createjs.Sprite);
-    objects.SpriteGameObject = SpriteGameObject;
+    objects.SpriteGameObject2 = SpriteGameObject2;
 })(objects || (objects = {}));
