@@ -24,12 +24,12 @@ module objects {
             this._leftBounds = this.width * 0.5;
             this._rightBounds = config.Screen.WIDTH / 2;
             this._topBounds = this.height * 0.5;
-            this._bottomBounds = config.Screen.HEIGHT - (this.height * 1.5);
+            this._bottomBounds = config.Screen.HEIGHT - (this.height * 2);
 
             //this.y = 430;
             
             // assign and play the engine sound
-            this.gameMusic = createjs.Sound.play("gameMusic");
+            this.gameMusic = createjs.Sound.play("gameMusic").setPan(0.0001).setVolume(0.2);
             // Loop engine sound forever
             this.gameMusic.loop = -1;
         }

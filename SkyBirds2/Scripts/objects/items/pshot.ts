@@ -1,16 +1,23 @@
-﻿module objects {
+﻿/* Author: Selina Daley */
+/* File: pshot.ts */
+/* Last Modified Date: April 15, 2016 */
+/* Description: This script is used to create a player bullet */
+
+module objects {
     // PSHOT CLASS ++++++++++++++++++++++++++++++++++++
     export class Pshot extends objects.SpriteGameObject2 {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         private _num: number;
         private _firstSet: boolean = true;
-        private _player: objects.Player;
+
+        // PUBLIC INSTANCE VARIABLES ++++++++++++++++++
+        public player: objects.Player;
 
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor(player: objects.Player) {
             super("pShot");
 
-            this._player = player;
+            this.player = player;
             this._speed.x = 10; //enemy speed
             this._reset(this._leftBounds);
             this.name = "pShot";
@@ -28,13 +35,13 @@
         public _reset(value: number): void {
 
             if (this._firstSet) {
-                this.x = this._player.x + 50;
-                this.y = this._player.y;
+                this.x = this.player.x + 1020;
+                this.y = this.player.y;
                 this._firstSet = false;
             }
             else {
-                this.x = this._player.x + 50;
-                this.y = this._player.y;
+                this.x = this.player.x + 50;
+                this.y = this.player.y;
             }
         }        
         

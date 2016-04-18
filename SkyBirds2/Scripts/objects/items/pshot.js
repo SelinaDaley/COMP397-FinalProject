@@ -1,3 +1,7 @@
+/* Author: Selina Daley */
+/* File: pshot.ts */
+/* Last Modified Date: April 15, 2016 */
+/* Description: This script is used to create a player bullet */
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -12,7 +16,7 @@ var objects;
         function Pshot(player) {
             _super.call(this, "pShot");
             this._firstSet = true;
-            this._player = player;
+            this.player = player;
             this._speed.x = 10; //enemy speed
             this._reset(this._leftBounds);
             this.name = "pShot";
@@ -27,13 +31,13 @@ var objects;
         // reset the enemy offscreen
         Pshot.prototype._reset = function (value) {
             if (this._firstSet) {
-                this.x = this._player.x + 50;
-                this.y = this._player.y;
+                this.x = this.player.x + 1020;
+                this.y = this.player.y;
                 this._firstSet = false;
             }
             else {
-                this.x = this._player.x + 50;
-                this.y = this._player.y;
+                this.x = this.player.x + 50;
+                this.y = this.player.y;
             }
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++

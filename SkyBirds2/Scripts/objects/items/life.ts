@@ -1,3 +1,8 @@
+/* Author: Selina Daley */
+/* File: life.ts */
+/* Last Modified Date: April 12, 2016 */
+/* Description: This script is used to make the player gain a life */
+
 module objects {
     // ALIEN CLASS ++++++++++++++++++++++++++++++++++++
     export class Life extends objects.SpriteGameObject2 {
@@ -34,7 +39,6 @@ module objects {
             else {
                 this.x = value + 4000;
                 this.y = Math.floor(Math.random() * 365);
-                scoreValue += 5;
             }
         }        
         

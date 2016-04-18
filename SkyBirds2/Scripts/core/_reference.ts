@@ -15,17 +15,20 @@
 /// <reference path="../objects/enemies/bomb.ts" />
 /// <reference path="../objects/enemies/dark.ts" />
 /// <reference path="../objects/enemies/horn.ts" />
+/// <reference path="../objects/enemies/eye.ts" />
 /// <reference path="../objects/player.ts" />
 
 /// <reference path="../objects/items/life.ts" />
 /// <reference path="../objects/items/eshot.ts" />
+/// <reference path="../objects/items/rocket.ts" />
 /// <reference path="../objects/items/pshot.ts" />
 /// <reference path="../managers/collision.ts" />
 /// <reference path="../managers/shotcollision.ts" />
 
 /// <reference path="../scenes/complete.ts" />
 /// <reference path="../scenes/end.ts" />
-/// <reference path="../scenes/instructions.ts" />
+// <reference path="../scenes/instructions.ts" />--------------------------
+/// <reference path="../scenes/nextlevel.ts" />
 /// <reference path="../scenes/bonus.ts" />
 /// <reference path="../scenes/level3.ts" />
 /// <reference path="../scenes/level2.ts" />

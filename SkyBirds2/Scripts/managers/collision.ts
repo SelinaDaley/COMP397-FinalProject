@@ -1,9 +1,15 @@
+/* Author: Selina Daley */
+/* File: collision.ts */
+/* Last Modified Date: April 15, 2016 */
+/* Description: This script is used to detect when the player collides with an object */
+
 module managers {
     // COLLISION MANAGER CLASS
     export class Collision {
         // PRIVATE INSTANCE VARIABLES
         private _player: objects.Player;
-        private _explosionMusic: createjs.AbstractSoundInstance;
+        private _explosionSound: createjs.AbstractSoundInstance;
+        private _itemSound: createjs.AbstractSoundInstance;
 
         constructor(player: objects.Player) {
             this._player = player;
@@ -31,16 +37,15 @@ module managers {
             if (this.distance(startPoint, endPoint) < minimumDistance) {
                 if (!object.isColliding) {
                     // check if it's an player hit
-                    if (object.name === "pShot") {
-                        scoreValue += object.enemyValue;//100; //award 100 points
-                    }
+                    //if (object.name === "pShot") {
+                    //    scoreValue += object.enemyValue;//100; //award 100 points
+                    //}
 
                     // check if it's an enemy hit
-                    if (object.name === 'alien' || object.name === 'bomb' || object.name === "dark" || object.name === "horn") {
-                        //createjs.Sound.play("thunder");
+                    if (object.name === 'alien' || object.name === 'bomb' || object.name === "dark" || object.name === "horn" || object.name === "rocket") {
                         livesValue--; // lose a life
                         object._reset(config.Screen.WIDTH + 200);
-                        this._explosionMusic = createjs.Sound.play("explosionMusic");
+                        this._explosionSound = createjs.Sound.play("explosionSound");
 
                         // check if player has no more lives
                         if(livesValue <= 0) {
@@ -78,15 +83,15 @@ module managers {
                 if (!object.isColliding) {
                     // check if it's life hit
                     if (object.name === "life") {
-                        livesValue--; // gain a life
+                        livesValue++; // gain a life
+                        this._itemSound = createjs.Sound.play("itemSound");
                         object._reset(config.Screen.WIDTH + 200); // reset game object off screen
                     }
-                    if (object.name === "pShot") {
-                        scoreValue += 100;//object.enemyValue;//100; //award 100 points
-                    }
+
                     // check if it's an enemy hit
                     if (object.name === 'eShot') {
                         livesValue--; // lose a life
+                        this._explosionSound = createjs.Sound.play("explosionSound");
                         object._reset(config.Screen.WIDTH + 200); // reset game object off screen
 
                         // check if player has no more lives

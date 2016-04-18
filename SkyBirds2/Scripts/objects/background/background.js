@@ -1,3 +1,7 @@
+/* Author: Selina Daley */
+/* File: background.ts */
+/* Last Modified Date: April 15, 2016 */
+/* Description: This script is used to scroll the background image */
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -11,7 +15,18 @@ var objects;
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         function Background() {
-            _super.call(this, "bkgd");
+            if (level == 1) {
+                _super.call(this, "bkgd");
+            }
+            else if (level == 2) {
+                _super.call(this, "bkgd2");
+            }
+            else if (level == 3) {
+                _super.call(this, "bkgd3");
+            }
+            else if (level == 4) {
+                _super.call(this, "bkgd4");
+            }
             this._speed.x -= 8; //background speed
             this._reset(10);
         }

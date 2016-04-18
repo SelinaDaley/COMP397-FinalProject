@@ -3,12 +3,14 @@ module scenes {
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _endLabel: objects.Label;
+        private _bonusLabel: objects.Label;
         private _scoreLabel: objects.Label
         private _highScoreLabel: objects.Label;
         private _restartButton: objects.Button;
         private _menuButton: objects.Button;
         private _background: createjs.Bitmap;
         private _endMusic: createjs.AbstractSoundInstance;
+        private _oldScore: number;
 
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -20,6 +22,10 @@ module scenes {
 
         // Start Method
         public start(): void {
+            //Add score and bonus values
+            this._oldScore = scoreValue;
+            scoreValue = scoreValue + timeBonus;
+            
             //Set High Score Value
             if (scoreValue > highScoreValue) {
                 highScoreValue = scoreValue;
@@ -30,36 +36,45 @@ module scenes {
             this.addChild(this._background);
 
             // assign and play the background sound
-            this._endMusic = createjs.Sound.play("endMusic");
+            this._endMusic = createjs.Sound.play("endMusic").setPan(0.0001).setVolume(0.2);
             // Loop engine sound forever
             this._endMusic.loop = -1;
 
             //Add Menu Label
             this._endLabel = new objects.Label(
-                "GAME OVER", "60px Consolas",
+                "GAME OVER", "60px Papyrus",
                 "#006400",
                 config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 160, true);
             this.addChild(this._endLabel);
+
+            //Add Score+Bonus Label
+            this._bonusLabel = new objects.Label(
+                "Score: " + this._oldScore + "  +  Time Bonus: " + timeBonus, "25px Consolas",
+                "#006400",
+                config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
+            this.addChild(this._bonusLabel);
+
+            scoreValue = scoreValue + timeBonus;
 
             //Add Score Label
             this._scoreLabel = new objects.Label(
                 "Your Score: " + scoreValue, "40px Consolas",
                 "#006400",
-                config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
+                config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 40, true);
             this.addChild(this._scoreLabel);
 
             //Add HighScore Label
             this._highScoreLabel = new objects.Label(
                 "High Score: " + highScoreValue, "40px Consolas",
                 "#006400",
-                config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y, true);
+                config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y + 20, true);
             this.addChild(this._highScoreLabel);
 
             // add the RESTART button to the OVER scene
             this._restartButton = new objects.Button(
                 "RestartButton",
                 config.Screen.CENTER_X * 0.83,
-                config.Screen.CENTER_Y + 130, true);
+                config.Screen.CENTER_Y + 140, true);
             this.addChild(this._restartButton);
 
             // RESTART Button event listener

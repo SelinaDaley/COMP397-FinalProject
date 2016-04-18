@@ -1,4 +1,9 @@
-﻿module objects {
+﻿/* Author: Selina Daley */
+/* File: horn.ts */
+/* Last Modified Date: April 13, 2016 */
+/* Description: This script is used to create a Horn enemy */
+
+module objects {
     // HORN CLASS ++++++++++++++++++++++++++++++++++++
     export class Horn extends objects.SpriteGameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++

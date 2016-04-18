@@ -1,3 +1,8 @@
+/* Author: Selina Daley */
+/* File: bomb.ts */
+/* Last Modified Date: April 13, 2016 */
+/* Description: This script is used to create a Bomb enemy */
+
 module objects {
     // BOMB CLASS ++++++++++++++++++++++++++++++++++++
     export class Bomb extends objects.SpriteGameObject {

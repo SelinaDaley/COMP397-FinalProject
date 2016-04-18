@@ -23,10 +23,6 @@ module scenes {
         private _playtime: number;
         private _time: number = 0;
 
-        
-       
-
-
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -52,8 +48,8 @@ module scenes {
             this._alienCount = 5;
             this._darkCount = 2;
             this._shotCount = 1;
-            livesValue = 5;
-            //scoreValue = 0;            
+            level = 2;
+            nextLevelValue = 400;           
             
             // Instantiate arrays
             this._aliens = new Array<objects.Alien>();

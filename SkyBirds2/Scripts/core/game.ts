@@ -15,6 +15,9 @@ var livesValue: number;
 var scoreValue: number;
 var nextLevelValue: number;
 var highScoreValue: number = 0;
+var level: number;
+var time: number = 0;
+var timeBonus: number = 0;
 
 // Game Scenes
 var menu: scenes.Menu;
@@ -22,9 +25,10 @@ var level1: scenes.Level1;
 var level2: scenes.Level2;
 var level3: scenes.Level3;
 var bonus: scenes.Bonus;
+var nextlevel: scenes.NextLevel;
 //var instructions: scenes.Instructions;
 var end: scenes.End;
-//var complete: scenes.Complete;
+var complete: scenes.Complete;
 
 var atlas = {
     "images": [
@@ -193,7 +197,7 @@ var atlas2 = {
 
         "eye": {
             "frames": [12, 8, 0, 13, 17, 16, 1, 7],
-            "speed": 0.5
+            "speed": 0.25
         },
 
         "explosion": {
@@ -236,13 +240,16 @@ var assetData:objects.Asset[] = [
     { id: "bkgd2", src: "../../Assets/images/bkgd2.png" },
     { id: "bkgd3", src: "../../Assets/images/bkgd3.png" },
     { id: "bkgd4", src: "../../Assets/images/bkgd4.png" },
+    { id: "fullBackground", src: "../../Assets/images/FullBackground.png" },
     { id: "gameOver", src: "../../Assets/images/GameOverBackground.png" },
+    { id: "gameComplete", src: "../../Assets/images/GameCompleteBackground.png" },
     { id: "logo", src: "../../Assets/images/logo2.png" },
 
     { id: "introMusic", src: "../../Assets/audio/8-punk-8-bit-music.mp3" },
     { id: "gameMusic", src: "../../Assets/audio/POL-starry-night-short.wav" },
     { id: "endMusic", src: "../../Assets/audio/8-bit-music.mp3" },
-    { id: "explosionMusic", src: "../../Assets/audio/BombExplosion.wav" }
+    { id: "itemSound", src: "../../Assets/audio/coin10.wav" },
+    { id: "explosionSound", src: "../../Assets/audio/BombExplosion.wav" }
 ];
 
 function preload() {
@@ -353,6 +360,20 @@ function changeScene(): void {
             end = new scenes.End();
             currentScene = end;
             console.log("Starting END Scene");
+            break;
+        case config.Scene.COMPLETE:
+            // show the COMPLETE scene
+            stage.removeAllChildren();
+            complete = new scenes.Complete();
+            currentScene = complete;
+            console.log("Starting COMPLETE Scene");
+            break;
+        case config.Scene.NEXTLEVEL:
+            // show the NEXTLEVEL scene
+            stage.removeAllChildren();
+            nextlevel = new scenes.NextLevel();
+            currentScene = nextlevel;
+            console.log("Starting NEXTLEVEL Scene");
             break;
     }
 

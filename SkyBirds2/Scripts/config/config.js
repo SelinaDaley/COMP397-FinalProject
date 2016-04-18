@@ -1,3 +1,7 @@
+/* Author: Selina Daley */
+/* File: config.ts */
+/* Last Modified Date: April 15, 2016 */
+/* Description: This script is used to handle the configurations */
 var config;
 (function (config) {
     // Scene Constants
@@ -12,6 +16,7 @@ var config;
         Scene.INSTRUCTIONS = 5;
         Scene.END = 6;
         Scene.COMPLETE = 7;
+        Scene.NEXTLEVEL = 8;
         return Scene;
     })();
     config.Scene = Scene;

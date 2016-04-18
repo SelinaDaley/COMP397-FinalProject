@@ -1,3 +1,7 @@
+/* Author: Selina Daley */
+/* File: bomb.ts */
+/* Last Modified Date: April 13, 2016 */
+/* Description: This script is used to create a Bomb enemy */
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

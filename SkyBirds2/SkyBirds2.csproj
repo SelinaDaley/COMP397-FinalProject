@@ -99,6 +99,7 @@
     <Content Include="Assets\images\atlas.png" />
     <Content Include="Assets\images\atlas2.png" />
     <Content Include="Assets\images\ExitButton.png" />
+    <Content Include="Assets\images\FullBackground.png" />
     <Content Include="Assets\images\GameCompleteBackground.png" />
     <Content Include="Assets\images\GameOverBackground.png" />
     <Content Include="Assets\images\InstructionButton.png" />
@@ -125,11 +126,13 @@
     <Content Include="Scripts\objects\enemies\alien.js.map" />
     <Content Include="Scripts\objects\enemies\bomb.js.map" />
     <Content Include="Scripts\objects\enemies\dark.js.map" />
+    <Content Include="Scripts\objects\enemies\eye.js" />
     <Content Include="Scripts\objects\enemies\horn.js" />
     <Content Include="Scripts\objects\gameobject.js.map" />
     <Content Include="Scripts\objects\items\eshot.js" />
     <Content Include="Scripts\objects\items\life.js" />
     <Content Include="Scripts\objects\items\pshot.js" />
+    <Content Include="Scripts\objects\items\rocket.js" />
     <Content Include="Scripts\objects\label.js.map" />
     <Content Include="Scripts\objects\player.js.map" />
     <Content Include="Scripts\objects\scene.js.map" />
@@ -147,6 +150,8 @@
     <Content Include="Scripts\objects\items\eshot.js.map" />
     <Content Include="Scripts\objects\items\pshot.js.map" />
     <Content Include="Scripts\objects\spritegameobject2.js.map" />
+    <Content Include="Scripts\managers\shotcollision.js.map" />
+    <Content Include="Scripts\scenes\nextlevel.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,6 +232,7 @@
     <Content Include="Scripts\scenes\level2.js" />
     <Content Include="Scripts\scenes\level3.js" />
     <Content Include="Scripts\scenes\menu.js" />
+    <Content Include="Scripts\scenes\nextlevel.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\scenes\instructions.js.map" />
     <Content Include="Scripts\scenes\level1.js.map" />
@@ -253,11 +259,13 @@
     <TypeScriptCompile Include="Scripts\objects\enemies\alien.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemies\bomb.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemies\dark.ts" />
+    <TypeScriptCompile Include="Scripts\objects\enemies\eye.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemies\horn.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\items\eshot.ts" />
     <TypeScriptCompile Include="Scripts\objects\items\life.ts" />
     <TypeScriptCompile Include="Scripts\objects\items\pshot.ts" />
+    <TypeScriptCompile Include="Scripts\objects\items\rocket.ts" />
     <TypeScriptCompile Include="Scripts\objects\spritegameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\label.ts" />
     <TypeScriptCompile Include="Scripts\objects\player.ts" />
@@ -271,6 +279,7 @@
     <TypeScriptCompile Include="Scripts\scenes\level2.ts" />
     <TypeScriptCompile Include="Scripts\scenes\level3.ts" />
     <TypeScriptCompile Include="Scripts\scenes\menu.ts" />
+    <TypeScriptCompile Include="Scripts\scenes\nextlevel.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />

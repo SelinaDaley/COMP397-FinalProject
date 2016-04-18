@@ -1,11 +1,28 @@
-﻿module objects {
+﻿/* Author: Selina Daley */
+/* File: background.ts */
+/* Last Modified Date: April 15, 2016 */
+/* Description: This script is used to scroll the background image */
+
+module objects {
     // BACKGROUND CLASS ++++++++++++++++++++++++++++++++++++
     export class Background extends objects.GameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor() {
-            super("bkgd");
+
+            if (level == 1) {
+                super("bkgd");
+            }
+            else if (level == 2) {
+                super("bkgd2");
+            }
+            else if (level == 3) {
+                super("bkgd3");
+            }
+            else if (level == 4) {
+                super("bkgd4");
+            }
 
             this._speed.x -= 8; //background speed
             this._reset(10);

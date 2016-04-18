@@ -28,17 +28,13 @@ var scenes;
         Level1.prototype.start = function () {
             // Set Enemy Count
             this._alienCount = 5;
-            this._darkCount = 2;
-            this._hornCount = 2;
             this._shotCount = 1;
             livesValue = 5;
             scoreValue = 0;
+            level = 1;
             nextLevelValue = 200;
             // Instantiate arrays
             this._aliens = new Array();
-            this._darks = new Array();
-            this._horns = new Array();
-            this._shot = new Array();
             this._shots = new Array();
             this._shotcollision = new Array();
             // added background to the scene
@@ -54,18 +50,6 @@ var scenes;
             for (var alien = 0; alien < this._alienCount; alien++) {
                 this._aliens[alien] = new objects.Alien(alien);
                 this.addChild(this._aliens[alien]);
-            }
-            // added darks to the scene
-            for (var dark = 0; dark < this._darkCount; dark++) {
-                this._darks[dark] = new objects.Dark(dark, this._darkCount);
-                this.addChild(this._darks[dark]);
-            }
-            // added horns to the scene
-            for (var horn = 0; horn < this._hornCount; horn++) {
-                this._horns[horn] = new objects.Horn(horn, this._hornCount);
-                this._shot[horn] = new objects.Eshot(this._horns[horn]);
-                this.addChild(this._horns[horn]);
-                this.addChild(this._shot[horn]);
             }
             // added player to the scene
             this._player = new objects.Player();
@@ -110,29 +94,12 @@ var scenes;
                     shot.check(alien);
                 });
             });
-            this._darks.forEach(function (dark) {
-                dark.update();
-                _this._collision.check(dark);
-                _this._shotcollision.forEach(function (shot) {
-                    shot.check(dark);
-                });
-            });
-            this._horns.forEach(function (horn) {
-                horn.update();
-                _this._collision.check(horn);
-                _this._shotcollision.forEach(function (shot) {
-                    shot.check(horn);
-                });
-            });
-            this._shot.forEach(function (shot) {
-                shot.update();
-                _this._collision.check2(shot);
-            });
             this._shots.forEach(function (shot) {
                 shot.update();
             });
             this._updateScore();
             this._time++;
+            time = Math.floor(this._time / 60);
         };
         return Level1;
     })(objects.Scene);

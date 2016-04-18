@@ -1,3 +1,9 @@
+/* Author: Selina Daley */
+/* File: alien.ts */
+/* Last Modified Date: April 13, 2016 */
+/* Description: This script is used to create a Alien enemy */
+
+
 module objects {
     // ALIEN CLASS ++++++++++++++++++++++++++++++++++++
     export class Alien extends objects.SpriteGameObject {
