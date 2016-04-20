@@ -11,9 +11,11 @@ module scenes {
         private _eye: objects.Eye;
         private _rockets: objects.Rocket[];
 
-        private _life: objects.Life;
+        private _invincible: objects.Invincible;
         private _player: objects.Player;
+        private _chicken: objects.Chicken;
         private _shots: objects.Pshot[];
+        private _shots2: objects.Ashot;
         private _shotCount: number;
         private _rocketCount: number;
 
@@ -74,8 +76,8 @@ module scenes {
 
 
             // added life to the scene
-            this._life = new objects.Life();
-            this.addChild(this._life);
+            this._invincible = new objects.Invincible();
+            this.addChild(this._invincible);
 
             /*// added aliens to the scene
             for (var alien: number = 0; alien < this._alienCount; alien++) {
@@ -95,7 +97,13 @@ module scenes {
                 // added shotcollision manager to the scene
                 this._shotcollision[shot] = new managers.ShotCollision(this._shots[shot]);
             }   
-                     
+                 
+            //added ally chicken to the scene
+            this._chicken = new objects.Chicken();
+            this.addChild(this._chicken);
+            this._shots2 = new objects.Ashot(this._chicken);    
+
+
             //added LivesLabel to the scene
             this._livesLabel = new objects.Label(
                 "Lives: " + livesValue,
@@ -124,7 +132,7 @@ module scenes {
             this.addChild(this._timeLabel);
 
             // added collision manager to the scene
-            this._collision = new managers.Collision(this._player);
+            this._collision = new managers.Collision(this._player, this._chicken);
 
             // add this scene to the global stage container
             stage.addChild(this);
@@ -147,11 +155,13 @@ module scenes {
                 });           
             });
 
-            
-            this._life.update();
-            this._collision.check2(this._life);
+            //this._shotcollision.c
+
+            this._invincible.update();
+            this._collision.check2(this._invincible);
             
             this._player.update();
+            this._chicken.update();
 
             /*this._aliens.forEach(alien => {
                 alien.update();

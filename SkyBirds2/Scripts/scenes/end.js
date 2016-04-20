@@ -35,7 +35,6 @@ var scenes;
             //Add Score+Bonus Label
             this._bonusLabel = new objects.Label("Score: " + this._oldScore + "  +  Time Bonus: " + timeBonus, "25px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
             this.addChild(this._bonusLabel);
-            scoreValue = scoreValue + timeBonus;
             //Add Score Label
             this._scoreLabel = new objects.Label("Your Score: " + scoreValue, "40px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 40, true);
             this.addChild(this._scoreLabel);

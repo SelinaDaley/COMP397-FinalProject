@@ -1,23 +1,23 @@
 ﻿/* Author: Selina Daley */
-/* File: pshot.ts */
+/* File: ashot.ts */
 /* Last Modified Date: April 15, 2016 */
-/* Description: This script is used to create a player bullet */
+/* Description: This script is used to create an ally bullet */
 
 module objects {
     // PSHOT CLASS ++++++++++++++++++++++++++++++++++++
-    export class Pshot extends objects.SpriteGameObject2 {
+    export class Ashot extends objects.SpriteGameObject2 {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         private _num: number;
         private _firstSet: boolean = true;
 
         // PUBLIC INSTANCE VARIABLES ++++++++++++++++++
-        public player: objects.Player;
+        public chicken: objects.Chicken;
 
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        constructor(player: objects.Player) {
+        constructor(chicken: objects.Chicken) {
             super("pShot");
 
-            this.player = player;
+            this.chicken = chicken;
             this._speed.x = 10; //bullet speed
             this._reset(this._leftBounds);
             this.name = "pShot";
@@ -35,13 +35,13 @@ module objects {
         public _reset(value: number): void {
 
             if (this._firstSet) {
-                this.x = this.player.x + 1020;
-                this.y = this.player.y;
+                this.x = this.chicken.x + 1020;
+                this.y = this.chicken.y;
                 this._firstSet = false;
             }
             else {
-                this.x = this.player.x + 50;
-                this.y = this.player.y;
+                this.x = this.chicken.x + 50;
+                this.y = this.chicken.y;
             }
         }        
         

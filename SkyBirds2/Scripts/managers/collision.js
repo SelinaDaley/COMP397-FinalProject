@@ -6,8 +6,9 @@ var managers;
 (function (managers) {
     // COLLISION MANAGER CLASS
     var Collision = (function () {
-        function Collision(player) {
+        function Collision(player, chicken) {
             this._player = player;
+            this._chicken = chicken;
         }
         Collision.prototype.distance = function (startPoint, endPoint) {
             return Math.sqrt(Math.pow((endPoint.x - startPoint.x), 2) + Math.pow(endPoint.y - startPoint.y, 2));
@@ -68,6 +69,11 @@ var managers;
                         livesValue++; // gain a life
                         this._itemSound = createjs.Sound.play("itemSound");
                         object._reset(config.Screen.WIDTH + 200); // reset game object off screen
+                    }
+                    if (object.name === "invincible") {
+                        this._chicken._reset(0);
+                        object._reset(config.Screen.WIDTH + 200);
+                        this._itemSound = createjs.Sound.play("itemSound");
                     }
                     // check if it's an enemy hit
                     if (object.name === 'eShot') {

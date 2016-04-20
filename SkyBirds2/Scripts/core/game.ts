@@ -26,7 +26,7 @@ var level2: scenes.Level2;
 var level3: scenes.Level3;
 var bonus: scenes.Bonus;
 var nextlevel: scenes.NextLevel;
-//var instructions: scenes.Instructions;
+var instructions: scenes.Instructions;
 var end: scenes.End;
 var complete: scenes.Complete;
 
@@ -207,7 +207,7 @@ var atlas2 = {
 
         "chicken": {
             "frames": [29, 32, 34, 35, 22, 23, 26, 28],
-            "speed": 0.5
+            "speed": 0.20
         },
 
         "pBomb": {
@@ -375,9 +375,14 @@ function changeScene(): void {
             currentScene = nextlevel;
             console.log("Starting NEXTLEVEL Scene");
             break;
-    }
-
-    console.log(currentScene.numChildren);
+        case config.Scene.INSTRUCTIONS:
+            // show the INSTRUCTIONS scene
+            stage.removeAllChildren();
+            instructions = new scenes.Instructions();
+            currentScene = instructions;
+            console.log("Starting INSTRUCTIONS Scene");
+            break;
+    }    
 }
 
 window.onload = preload;

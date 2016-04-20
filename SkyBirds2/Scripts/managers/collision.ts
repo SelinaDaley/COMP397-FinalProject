@@ -8,11 +8,13 @@ module managers {
     export class Collision {
         // PRIVATE INSTANCE VARIABLES
         private _player: objects.Player;
+        private _chicken: objects.Chicken;
         private _explosionSound: createjs.AbstractSoundInstance;
         private _itemSound: createjs.AbstractSoundInstance;
 
-        constructor(player: objects.Player) {
+        constructor(player: objects.Player, chicken: objects.Chicken) {
             this._player = player;
+            this._chicken = chicken;
         }
 
         public distance(startPoint: createjs.Point, endPoint: createjs.Point): number {
@@ -86,6 +88,11 @@ module managers {
                         livesValue++; // gain a life
                         this._itemSound = createjs.Sound.play("itemSound");
                         object._reset(config.Screen.WIDTH + 200); // reset game object off screen
+                    }
+                    if (object.name === "invincible") {
+                        this._chicken._reset(0);
+                        object._reset(config.Screen.WIDTH + 200);
+                        this._itemSound = createjs.Sound.play("itemSound");
                     }
 
                     // check if it's an enemy hit

@@ -49,8 +49,8 @@ var scenes;
                 this.addChild(this._rockets[rocket]);
             }
             // added life to the scene
-            this._life = new objects.Life();
-            this.addChild(this._life);
+            this._invincible = new objects.Invincible();
+            this.addChild(this._invincible);
             /*// added aliens to the scene
             for (var alien: number = 0; alien < this._alienCount; alien++) {
                 this._aliens[alien] = new objects.Alien(alien);
@@ -66,6 +66,10 @@ var scenes;
                 // added shotcollision manager to the scene
                 this._shotcollision[shot] = new managers.ShotCollision(this._shots[shot]);
             }
+            //added ally chicken to the scene
+            this._chicken = new objects.Chicken();
+            this.addChild(this._chicken);
+            this._shots2 = new objects.Ashot(this._chicken);
             //added LivesLabel to the scene
             this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#000000", 10, 460, false);
             this.addChild(this._livesLabel);
@@ -76,7 +80,7 @@ var scenes;
             this._timeLabel = new objects.Label("Time: " + Math.floor(this._time / 60), "40px Consolas", "#000000", 590, 460, false);
             this.addChild(this._timeLabel);
             // added collision manager to the scene
-            this._collision = new managers.Collision(this._player);
+            this._collision = new managers.Collision(this._player, this._chicken);
             // add this scene to the global stage container
             stage.addChild(this);
         };
@@ -94,9 +98,11 @@ var scenes;
                     shot.check(rocket);
                 });
             });
-            this._life.update();
-            this._collision.check2(this._life);
+            //this._shotcollision.c
+            this._invincible.update();
+            this._collision.check2(this._invincible);
             this._player.update();
+            this._chicken.update();
             /*this._aliens.forEach(alien => {
                 alien.update();
                 this._collision.check(alien);

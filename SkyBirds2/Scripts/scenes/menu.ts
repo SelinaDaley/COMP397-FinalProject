@@ -98,6 +98,7 @@ module scenes {
         // Instruction Button click event handler
         private _instructionButtonClick(event: createjs.MouseEvent) {
             // Switch to the Instruction Scene
+this.introMusic.stop();
             scene = config.Scene.INSTRUCTIONS;
             changeScene();
         }

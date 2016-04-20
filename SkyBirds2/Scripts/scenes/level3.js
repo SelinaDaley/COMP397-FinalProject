@@ -69,6 +69,9 @@ var scenes;
             // added player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            //added ally chicken to the scene
+            this._chicken = new objects.Chicken();
+            this.addChild(this._chicken);
             // added player shots to the scene
             for (var shot = 0; shot < this._shotCount; shot++) {
                 this._shots[shot] = new objects.Pshot(this._player);
@@ -86,7 +89,7 @@ var scenes;
             this._timeLabel = new objects.Label("Time: " + Math.floor(this._time / 60), "40px Consolas", "#ffffff", 590, 460, false);
             this.addChild(this._timeLabel);
             // added collision manager to the scene
-            this._collision = new managers.Collision(this._player);
+            this._collision = new managers.Collision(this._player, this._chicken);
             // add this scene to the global stage container
             stage.addChild(this);
         };

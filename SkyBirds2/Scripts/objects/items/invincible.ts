@@ -1,22 +1,21 @@
-/* Author: Selina Daley */
-/* File: life.ts */
-/* Last Modified Date: April 12, 2016 */
-/* Description: This script is used to make the player gain a life */
+﻿/* Author: Selina Daley */
+/* File: invincible.ts */
+/* Last Modified Date: April 18, 2016 */
+/* Description: This script is used to make the player gain an ally */
 
 module objects {
-    // ALIEN CLASS ++++++++++++++++++++++++++++++++++++
-    export class Life extends objects.SpriteGameObject2 {
+    // INVINCIBLE CLASS ++++++++++++++++++++++++++++++++++++
+    export class Invincible extends objects.SpriteGameObject2 {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         private _firstSet: boolean = true;
 
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor() {
-            super("life");
+            super("invincible");
 
             this._speed.x -= 8; //item speed
             this._reset(this._rightBounds);
-            this.name = "life";
-            //this.soundString = "yay";
+            this.name = "invincible";
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
@@ -36,7 +35,7 @@ module objects {
                 this._firstSet = false;
             }
             else {
-                this.x = value + 4000;
+                this.x = value + 8000;
                 this.y = Math.floor(Math.random() * 365);
             }
         }        

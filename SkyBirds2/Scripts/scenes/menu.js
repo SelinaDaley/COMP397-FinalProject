@@ -62,6 +62,7 @@ var scenes;
         // Instruction Button click event handler
         Menu.prototype._instructionButtonClick = function (event) {
             // Switch to the Instruction Scene
+            this.introMusic.stop();
             scene = config.Scene.INSTRUCTIONS;
             changeScene();
         };

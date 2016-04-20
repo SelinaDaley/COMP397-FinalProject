@@ -14,6 +14,7 @@ module scenes {
 
         private _life: objects.Life;
         private _player: objects.Player;
+        private _chicken: objects.Chicken;
         private _shots: objects.Pshot[];
         private _shotCount: number;
 
@@ -85,6 +86,10 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);
             
+            //added ally chicken to the scene
+            this._chicken = new objects.Chicken();
+            this.addChild(this._chicken);
+
             // added player shots to the scene
             for (var shot: number = 0; shot < this._shotCount; shot++) {
                 this._shots[shot] = new objects.Pshot(this._player);
@@ -122,7 +127,7 @@ module scenes {
             this.addChild(this._timeLabel);
 
             // added collision manager to the scene
-            this._collision = new managers.Collision(this._player);
+            this._collision = new managers.Collision(this._player, this._chicken);
 
             // add this scene to the global stage container
             stage.addChild(this);

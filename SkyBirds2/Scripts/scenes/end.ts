@@ -54,7 +54,7 @@ module scenes {
                 config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
             this.addChild(this._bonusLabel);
 
-            scoreValue = scoreValue + timeBonus;
+           
 
             //Add Score Label
             this._scoreLabel = new objects.Label(

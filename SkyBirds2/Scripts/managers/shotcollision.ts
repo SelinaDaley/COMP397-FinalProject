@@ -81,7 +81,7 @@ module managers {
                         this._count++;
                         this._explosionSound = createjs.Sound.play("explosionSound"); 
                         this._shot._reset(config.Screen.WIDTH + 200);
-                        console.log(this._count);
+                        //console.log(this._count);
 
                         if (this._count >= 25)
                         {
