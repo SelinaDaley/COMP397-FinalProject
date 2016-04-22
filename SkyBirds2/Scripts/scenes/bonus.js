@@ -31,7 +31,6 @@ var scenes;
             this._shotCount = 1;
             this._rocketCount = 3;
             level = 4;
-            //nextLevelValue = 500;            
             // Instantiate arrays
             //this._aliens = new Array<objects.Alien>();
             this._shots = new Array();
@@ -70,6 +69,8 @@ var scenes;
             this._chicken = new objects.Chicken();
             this.addChild(this._chicken);
             this._shots2 = new objects.Ashot(this._chicken);
+            this.addChild(this._shots2);
+            this._shotcollision2 = new managers.ShotCollision2(this._shots2);
             //added LivesLabel to the scene
             this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#000000", 10, 460, false);
             this.addChild(this._livesLabel);
@@ -81,24 +82,29 @@ var scenes;
             this.addChild(this._timeLabel);
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player, this._chicken);
+            // added collision manager to the scene
+            this._collision2 = new managers.Collision2(this._chicken);
             // add this scene to the global stage container
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Bonus.prototype.update = function () {
             var _this = this;
+            this._shots2.update();
             this._eye.update();
+            this._shotcollision2.check2(this._eye);
             this._shotcollision.forEach(function (shot) {
                 shot.check2(_this._eye);
             });
             this._rockets.forEach(function (rocket) {
                 rocket.update();
                 _this._collision.check(rocket);
+                _this._collision2.check(rocket);
+                _this._shotcollision2.check(rocket);
                 _this._shotcollision.forEach(function (shot) {
                     shot.check(rocket);
                 });
             });
-            //this._shotcollision.c
             this._invincible.update();
             this._collision.check2(this._invincible);
             this._player.update();

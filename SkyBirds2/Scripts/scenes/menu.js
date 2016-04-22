@@ -23,7 +23,6 @@ var scenes;
             this._logo.x = config.Screen.CENTER_X * 0.35;
             this._logo.y = 0; //config.Screen.CENTER_Y * 0.005;
             this.addChild(this._logo);
-            // assign and play the background sound
             this.introMusic = createjs.Sound.play("introMusic").setPan(0.0001).setVolume(0.2);
             // Loop engine sound forever
             this.introMusic.loop = -1;
@@ -69,9 +68,9 @@ var scenes;
         // Exit Button click event handler
         Menu.prototype._exitButtonClick = function (event) {
             // Switch to the Exit Scene
-            //this.introMusic.stop();
-            //scene = config.Scene.LEVEL1;
-            //changeScene();
+            this.introMusic.stop();
+            scene = config.Scene.EXIT;
+            changeScene();
         };
         return Menu;
     })(objects.Scene);

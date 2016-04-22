@@ -4,7 +4,9 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _background: createjs.Bitmap;
         private _collision: managers.Collision;
+        private _collision2: managers.Collision2;
         private _shotcollision: managers.ShotCollision[];
+        private _shotcollision2: managers.ShotCollision2;
 
         //private _aliens: objects.Alien[];
         //private _alienCount: number;
@@ -50,8 +52,7 @@ module scenes {
             //this._alienCount = 5;
             this._shotCount = 1;
             this._rocketCount = 3;
-            level = 4;
-            //nextLevelValue = 500;            
+            level = 4;            
             
             // Instantiate arrays
             //this._aliens = new Array<objects.Alien>();
@@ -72,9 +73,7 @@ module scenes {
                 this._rockets[rocket] = new objects.Rocket(rocket, this._rocketCount, this._eye);
                 this.addChild(this._rockets[rocket]);
             }
-
-
-
+            
             // added life to the scene
             this._invincible = new objects.Invincible();
             this.addChild(this._invincible);
@@ -101,7 +100,9 @@ module scenes {
             //added ally chicken to the scene
             this._chicken = new objects.Chicken();
             this.addChild(this._chicken);
-            this._shots2 = new objects.Ashot(this._chicken);    
+            this._shots2 = new objects.Ashot(this._chicken);
+            this.addChild(this._shots2);
+            this._shotcollision2 = new managers.ShotCollision2(this._shots2);
 
 
             //added LivesLabel to the scene
@@ -134,14 +135,20 @@ module scenes {
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player, this._chicken);
 
+            // added collision manager to the scene
+            this._collision2 = new managers.Collision2(this._chicken);
+
             // add this scene to the global stage container
             stage.addChild(this);
         }
 
         // PLAY Scene updates here
         public update(): void {
-        
+
+            this._shots2.update();
             this._eye.update();
+
+            this._shotcollision2.check2(this._eye);
             this._shotcollision.forEach(shot => {
                 shot.check2(this._eye);
             });
@@ -149,13 +156,12 @@ module scenes {
             this._rockets.forEach(rocket => {
                 rocket.update();   
                 this._collision.check(rocket);
-                
+                this._collision2.check(rocket);
+                this._shotcollision2.check(rocket);
                 this._shotcollision.forEach(shot => {
                     shot.check(rocket); 
                 });           
-            });
-
-            //this._shotcollision.c
+            });            
 
             this._invincible.update();
             this._collision.check2(this._invincible);

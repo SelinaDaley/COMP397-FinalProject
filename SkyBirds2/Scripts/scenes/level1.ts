@@ -50,7 +50,8 @@ module scenes {
             scoreValue = 0;
             timeBonus = 0;
             level = 1;
-            nextLevelValue = 200;            
+            nextLevelValue = 200; 
+            count = 0;           
             
             // Instantiate arrays
             this._aliens = new Array<objects.Alien>();

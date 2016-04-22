@@ -17,6 +17,7 @@ var config;
         Scene.END = 6;
         Scene.COMPLETE = 7;
         Scene.NEXTLEVEL = 8;
+        Scene.EXIT = 9;
         return Scene;
     })();
     config.Scene = Scene;

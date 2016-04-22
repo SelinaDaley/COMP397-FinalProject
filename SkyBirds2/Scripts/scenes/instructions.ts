@@ -4,9 +4,11 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _instructionsLabel: objects.Label;
         private _textLabel: objects.Label;
+        private _textLabel2: objects.Label;
         private _backButton: objects.Button;
         private _background: createjs.Bitmap;
         private _text: String;
+        private _text2: String;
         
         //PUBLIC INSTANCE VARIABLES
         public introMusic: createjs.AbstractSoundInstance;
@@ -20,12 +22,15 @@ module scenes {
         
         // Start Method
         public start(): void {
-            this._text = "\n"+ 
-            "Move Up: Move the mouse up\n"+
-            "Move Down: Move the mouse down\n"+
-            "Move Left: Move the mouse left\n"+
-            "Move Right: Move the mouse right\n"+
-            "Fire Shot: Automatic";
+            this._text =  "Stay alive as long as you can\n" +
+                          "while killing enemies to rack \n" +
+                          "                  up points!";
+            this._text2 = "Move Up: Move the mouse up\n" +
+                          "Move Down: Move the mouse down\n" +
+                          "Move Left: Move the mouse left\n" +
+                          "Move Right: Move the mouse right\n" +
+                          "Fire Shot: Automatic";
+            
 
             // add the background image
             this._background = new createjs.Bitmap(assets.getResult("fullBackground"));
@@ -39,18 +44,26 @@ module scenes {
             //Add Instruction Label
             this._instructionsLabel = new objects.Label(
                 "INSTRUCTIONS", "60px Monotype Corsiva",
-                "#000000",
+                "#006400",
                 config.Screen.CENTER_X * 0.83,
                 config.Screen.CENTER_Y - 140, true);
             this.addChild(this._instructionsLabel);            
             
             //Add Text Label
             this._textLabel = new objects.Label(
-                "" + this._text, "20px Calibri",
+                "" + this._text, "35px Calibri",
                 "#000000",
                 config.Screen.CENTER_X * 0.83,
-                config.Screen.CENTER_Y - 60, true);
+                config.Screen.CENTER_Y - 50, true);
             this.addChild(this._textLabel);            
+
+            //Add Text Label 2
+            this._textLabel2 = new objects.Label(
+                "" + this._text2, "24px Calibri",
+                "#000000",
+                config.Screen.CENTER_X * 0.83,
+                config.Screen.CENTER_Y + 80, true);
+            this.addChild(this._textLabel2);  
 
             // add the Back button to the INSTRUCTIONS scene
             this._backButton = new objects.Button(

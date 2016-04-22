@@ -32,7 +32,7 @@ module objects {
         // reset the ally
         public _reset(value: number): void {
             this._startTime = this._time;                      
-            this.x = 50;
+            this.x = 100;
             this.y = Math.floor(Math.random() * 365);
             this._fighting = true;          
         }        

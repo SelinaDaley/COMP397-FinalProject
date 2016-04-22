@@ -29,7 +29,7 @@ var objects;
         // reset the ally
         Chicken.prototype._reset = function (value) {
             this._startTime = this._time;
-            this.x = 50;
+            this.x = 100;
             this.y = Math.floor(Math.random() * 365);
             this._fighting = true;
         };

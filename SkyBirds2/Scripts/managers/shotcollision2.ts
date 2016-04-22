@@ -5,12 +5,12 @@
 
 module managers {
     // SHOTCOLLISION MANAGER CLASS
-    export class ShotCollision {
+    export class ShotCollision2 {
         // PRIVATE INSTANCE VARIABLES
-        private _shot: objects.Pshot;
+        private _shot: objects.Ashot;
         private _explosionSound: createjs.AbstractSoundInstance;
 
-        constructor(shot: objects.Pshot) {
+        constructor(shot: objects.Ashot) {
             this._shot = shot;
         }
 
@@ -43,12 +43,12 @@ module managers {
                         this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5);           
                         
                         // check if 
-                        if (scoreValue >= nextLevelValue && level < 4) {
+                        /*if (scoreValue >= nextLevelValue && level < 4) {
 
                             scene = config.Scene.NEXTLEVEL;
-                            this._shot.player.gameMusic.stop();
+                            this._shot.chicken.gameMusic.stop();
                             changeScene();
-                        }             
+                        }*/
                     }
                     object.isColliding = true;
                 }
@@ -56,8 +56,8 @@ module managers {
             else {
                 object.isColliding = false;
             }
-        }    
-        
+        }
+
         public check2(object: objects.SpriteGameObject2) {
             var startPoint: createjs.Point = new createjs.Point();
             var endPoint: createjs.Point = new createjs.Point();
@@ -78,17 +78,16 @@ module managers {
                     // check if it's an enemy hit
                     if (object.name === "eye") {
                         count++;
-                        this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5); 
+                        this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5);
                         this._shot._reset(config.Screen.WIDTH + 200);
                         //console.log(this._count);
 
-                        if (count >= 25)
-                        {
+                        /*if (this._count >= 25) {
                             scoreValue += object.enemyValue; // add points to thte score
                             scene = config.Scene.NEXTLEVEL;
                             this._shot.player.gameMusic.stop();
                             changeScene();
-                        }
+                        }*/
                         
                         /*object._reset(config.Screen.WIDTH + 200);
                         
@@ -103,6 +102,6 @@ module managers {
             else {
                 object.isColliding = false;
             }
-        }      
+        }
     }
 }

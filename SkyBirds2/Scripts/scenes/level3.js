@@ -80,13 +80,13 @@ var scenes;
                 this._shotcollision[shot] = new managers.ShotCollision(this._shots[shot]);
             }
             //added LivesLabel to the scene
-            this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#ffffff", 10, 460, false);
+            this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#000000", 10, 460, false);
             this.addChild(this._livesLabel);
             //added LivesLabel to the scene
-            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#ffffff", 290, 460, false);
+            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#000000", 290, 460, false);
             this.addChild(this._scoreLabel);
             //added TimeLabel to the scene
-            this._timeLabel = new objects.Label("Time: " + Math.floor(this._time / 60), "40px Consolas", "#ffffff", 590, 460, false);
+            this._timeLabel = new objects.Label("Time: " + Math.floor(this._time / 60), "40px Consolas", "#000000", 590, 460, false);
             this.addChild(this._timeLabel);
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player, this._chicken);

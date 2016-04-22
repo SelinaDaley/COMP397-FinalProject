@@ -117,7 +117,7 @@ module scenes {
             this._livesLabel = new objects.Label(
                 "Lives: " + livesValue,
                 "40px Consolas",
-                "#ffffff",
+                "#000000",
                 10, 460, false
             );
             this.addChild(this._livesLabel);
@@ -126,7 +126,7 @@ module scenes {
             this._scoreLabel = new objects.Label(
                 "Score: " + scoreValue,
                 "40px Consolas",
-                "#ffffff",
+                "#000000",
                 290, 460, false
             );
             this.addChild(this._scoreLabel);
@@ -135,7 +135,7 @@ module scenes {
             this._timeLabel = new objects.Label(
                 "Time: " + Math.floor(this._time / 60),
                 "40px Consolas",
-                "#ffffff",
+                "#000000",
                 590, 460, false
             );
             this.addChild(this._timeLabel);

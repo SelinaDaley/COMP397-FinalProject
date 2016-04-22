@@ -16,6 +16,7 @@ module config {
         public static END: number = 6;
         public static COMPLETE: number = 7;
         public static NEXTLEVEL: number = 8;
+        public static EXIT: number = 9;
     }
     
     

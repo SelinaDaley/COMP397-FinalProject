@@ -49,13 +49,13 @@ module objects {
             if (this._firstSet) {
             
                 this.x = this._enemy.x - 80;
-                this.y = this._enemy.y + 25 * this._num;
+                this.y = this._enemy.y + 50 * this._num;
                 this._firstSet = false;
             }
             else //if (this._time > this._fireRate)
             {
                 this.x = this._enemy.x - 80;
-                this.y = this._enemy.y + 25 * this._num;
+                this.y = this._enemy.y + 50 * this._num;
             }
         }        
         

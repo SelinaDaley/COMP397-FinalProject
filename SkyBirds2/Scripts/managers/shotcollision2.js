@@ -5,14 +5,14 @@
 var managers;
 (function (managers) {
     // SHOTCOLLISION MANAGER CLASS
-    var ShotCollision = (function () {
-        function ShotCollision(shot) {
+    var ShotCollision2 = (function () {
+        function ShotCollision2(shot) {
             this._shot = shot;
         }
-        ShotCollision.prototype.distance = function (startPoint, endPoint) {
+        ShotCollision2.prototype.distance = function (startPoint, endPoint) {
             return Math.sqrt(Math.pow((endPoint.x - startPoint.x), 2) + Math.pow(endPoint.y - startPoint.y, 2));
         };
-        ShotCollision.prototype.check = function (object) {
+        ShotCollision2.prototype.check = function (object) {
             var startPoint = new createjs.Point();
             var endPoint = new createjs.Point();
             var playerHalfHeight = this._shot.height * 0.5;
@@ -31,12 +31,6 @@ var managers;
                         object._reset(config.Screen.WIDTH + 200);
                         this._shot._reset(config.Screen.WIDTH + 200);
                         this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5);
-                        // check if 
-                        if (scoreValue >= nextLevelValue && level < 4) {
-                            scene = config.Scene.NEXTLEVEL;
-                            this._shot.player.gameMusic.stop();
-                            changeScene();
-                        }
                     }
                     object.isColliding = true;
                 }
@@ -45,7 +39,7 @@ var managers;
                 object.isColliding = false;
             }
         };
-        ShotCollision.prototype.check2 = function (object) {
+        ShotCollision2.prototype.check2 = function (object) {
             var startPoint = new createjs.Point();
             var endPoint = new createjs.Point();
             var playerHalfHeight = this._shot.height * 0.5;
@@ -63,13 +57,6 @@ var managers;
                         count++;
                         this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5);
                         this._shot._reset(config.Screen.WIDTH + 200);
-                        //console.log(this._count);
-                        if (count >= 25) {
-                            scoreValue += object.enemyValue; // add points to thte score
-                            scene = config.Scene.NEXTLEVEL;
-                            this._shot.player.gameMusic.stop();
-                            changeScene();
-                        }
                     }
                     object.isColliding = true;
                 }
@@ -78,7 +65,7 @@ var managers;
                 object.isColliding = false;
             }
         };
-        return ShotCollision;
+        return ShotCollision2;
     })();
-    managers.ShotCollision = ShotCollision;
+    managers.ShotCollision2 = ShotCollision2;
 })(managers || (managers = {}));

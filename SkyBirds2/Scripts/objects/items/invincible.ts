@@ -13,16 +13,16 @@ module objects {
         constructor() {
             super("invincible");
 
-            this._speed.x -= 8; //item speed
-            this._reset(this._rightBounds);
+            this._speed.y = 5; //item speed
+            this._reset(this._topBounds);
             this.name = "invincible";
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         protected _checkBounds(value: number): void {
             // check to see if the right of the item is outside the viewport         
-            if (this.x <= value) {
-                this._reset(this._rightBounds);
+            if (this.y >= value) {
+                this._reset(this._topBounds);
             }
         }
         
@@ -30,21 +30,21 @@ module objects {
         public _reset(value: number): void {
 
             if (this._firstSet) {
-                this.x = value + 4000;
-                this.y = Math.floor(Math.random() * 365);
+                this.x = Math.floor(Math.random() * 500);
+                this.y = value - 4000;
                 this._firstSet = false;
             }
             else {
-                this.x = value + 8000;
-                this.y = Math.floor(Math.random() * 365);
+                this.x = Math.floor(Math.random() * 500);
+                this.y = value - 7000;
             }
         }        
         
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         public update(): void {
             // scroll the enemy -5 px per frame
-            this.x += this._speed.x;
-            this._checkBounds(this._leftBounds);
+            this.y += this._speed.y;
+            this._checkBounds(this._bottomBounds);
         }
     }
 }

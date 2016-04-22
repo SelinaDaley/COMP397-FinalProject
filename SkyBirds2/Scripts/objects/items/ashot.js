@@ -32,12 +32,13 @@ var objects;
         Ashot.prototype._reset = function (value) {
             if (this._firstSet) {
                 this.x = this.chicken.x + 1020;
-                this.y = this.chicken.y;
+                this.y = this.chicken.y + 10;
+                ;
                 this._firstSet = false;
             }
             else {
-                this.x = this.chicken.x + 50;
-                this.y = this.chicken.y;
+                this.x = this.chicken.x + 60;
+                this.y = this.chicken.y + 20;
             }
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++

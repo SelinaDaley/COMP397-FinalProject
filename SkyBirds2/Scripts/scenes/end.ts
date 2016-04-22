@@ -32,7 +32,7 @@ module scenes {
             }
             
             // add the background image
-            this._background = new createjs.Bitmap(assets.getResult("gameOver"));//"../../Assets/images/GameOverBackground3.png");
+            this._background = new createjs.Bitmap(assets.getResult("gameOver"));
             this.addChild(this._background);
 
             // assign and play the background sound
@@ -53,9 +53,7 @@ module scenes {
                 "#006400",
                 config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
             this.addChild(this._bonusLabel);
-
            
-
             //Add Score Label
             this._scoreLabel = new objects.Label(
                 "Your Score: " + scoreValue, "40px Consolas",

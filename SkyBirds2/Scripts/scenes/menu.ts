@@ -31,8 +31,7 @@ module scenes {
             this._logo.x = config.Screen.CENTER_X * 0.35;
             this._logo.y = 0;//config.Screen.CENTER_Y * 0.005;
             this.addChild(this._logo);
-
-            // assign and play the background sound
+                        
             this.introMusic = createjs.Sound.play("introMusic").setPan(0.0001).setVolume(0.2);
             // Loop engine sound forever
             this.introMusic.loop = -1;
@@ -98,7 +97,7 @@ module scenes {
         // Instruction Button click event handler
         private _instructionButtonClick(event: createjs.MouseEvent) {
             // Switch to the Instruction Scene
-this.introMusic.stop();
+            this.introMusic.stop();
             scene = config.Scene.INSTRUCTIONS;
             changeScene();
         }
@@ -106,9 +105,9 @@ this.introMusic.stop();
         // Exit Button click event handler
         private _exitButtonClick(event: createjs.MouseEvent) {
             // Switch to the Exit Scene
-            //this.introMusic.stop();
-            //scene = config.Scene.LEVEL1;
-            //changeScene();
+            this.introMusic.stop();
+            scene = config.Scene.EXIT;
+            changeScene();
         }
 
     }

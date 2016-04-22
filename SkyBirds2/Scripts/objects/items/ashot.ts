@@ -36,12 +36,12 @@ module objects {
 
             if (this._firstSet) {
                 this.x = this.chicken.x + 1020;
-                this.y = this.chicken.y;
+                this.y = this.chicken.y + 10;;
                 this._firstSet = false;
             }
             else {
-                this.x = this.chicken.x + 50;
-                this.y = this.chicken.y;
+                this.x = this.chicken.x + 60;
+                this.y = this.chicken.y + 20;
             }
         }        
         

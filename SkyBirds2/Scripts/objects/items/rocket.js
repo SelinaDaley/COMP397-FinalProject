@@ -41,12 +41,12 @@ var objects;
         Rocket.prototype._reset = function (value) {
             if (this._firstSet) {
                 this.x = this._enemy.x - 80;
-                this.y = this._enemy.y + 25 * this._num;
+                this.y = this._enemy.y + 50 * this._num;
                 this._firstSet = false;
             }
             else {
                 this.x = this._enemy.x - 80;
-                this.y = this._enemy.y + 25 * this._num;
+                this.y = this._enemy.y + 50 * this._num;
             }
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++

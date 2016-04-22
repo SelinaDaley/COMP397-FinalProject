@@ -15,6 +15,9 @@ var scenes;
         // PUBLIC METHODS ++++++++++++++++++++
         // Start Method
         Complete.prototype.start = function () {
+            //Add score and bonus values
+            this._oldScore = scoreValue;
+            scoreValue = scoreValue + timeBonus;
             //Set High Score Value
             if (scoreValue > highScoreValue) {
                 highScoreValue = scoreValue;
@@ -23,20 +26,23 @@ var scenes;
             this._background = new createjs.Bitmap(assets.getResult("gameComplete"));
             this.addChild(this._background);
             // assign and play the background sound
-            this._endMusic = createjs.Sound.play("endMusic").setPan(0.0001);
+            this._endMusic = createjs.Sound.play("endMusic").setPan(0.0001).setVolume(0.2);
             // Loop engine sound forever
             this._endMusic.loop = -1;
             //Add Menu Label
             this._endLabel = new objects.Label("GAME COMPLETE", "48px Papyrus", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 160, true);
             this.addChild(this._endLabel);
+            //Add Score+Bonus Label
+            this._bonusLabel = new objects.Label("Score: " + this._oldScore + "  +  Time Bonus: " + timeBonus, "25px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
+            this.addChild(this._bonusLabel);
             //Add Score Label
-            this._scoreLabel = new objects.Label("Your Score: " + scoreValue, "40px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 80, true);
+            this._scoreLabel = new objects.Label("Your Score: " + scoreValue, "40px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 40, true);
             this.addChild(this._scoreLabel);
             //Add HighScore Label
-            this._highScoreLabel = new objects.Label("High Score: " + highScoreValue, "40px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y, true);
+            this._highScoreLabel = new objects.Label("High Score: " + highScoreValue, "40px Consolas", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y + 20, true);
             this.addChild(this._highScoreLabel);
             // add the RESTART button to the COMPLETE scene
-            this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y + 130, true);
+            this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y + 140, true);
             this.addChild(this._restartButton);
             // RESTART Button event listener
             this._restartButton.on("click", this._restartButtonClick, this);

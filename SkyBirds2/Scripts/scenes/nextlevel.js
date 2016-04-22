@@ -20,7 +20,7 @@ var scenes;
             this._background = new createjs.Bitmap(assets.getResult("fullBackground"));
             this.addChild(this._background);
             // assign and play the background sound
-            this._introMusic = createjs.Sound.play("introMusic").setPan(0.0001).setVolume(0.1);
+            this._introMusic = createjs.Sound.play("introMusic").setPan(0.0001).setVolume(0.2);
             // Loop engine sound forever
             this._introMusic.loop = -1;
             //Add Title Label

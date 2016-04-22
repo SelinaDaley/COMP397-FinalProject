@@ -18,6 +18,7 @@ var highScoreValue: number = 0;
 var level: number;
 var time: number = 0;
 var timeBonus: number = 0;
+var count: number = 0;
 
 // Game Scenes
 var menu: scenes.Menu;
@@ -29,6 +30,7 @@ var nextlevel: scenes.NextLevel;
 var instructions: scenes.Instructions;
 var end: scenes.End;
 var complete: scenes.Complete;
+var exit: scenes.Exit;
 
 var atlas = {
     "images": [
@@ -381,6 +383,13 @@ function changeScene(): void {
             instructions = new scenes.Instructions();
             currentScene = instructions;
             console.log("Starting INSTRUCTIONS Scene");
+            break;
+        case config.Scene.EXIT:
+            // show the EXIT scene
+            stage.removeAllChildren();
+            exit = new scenes.Exit();
+            currentScene = exit;
+            console.log("Starting EXIT Scene");
             break;
     }    
 }

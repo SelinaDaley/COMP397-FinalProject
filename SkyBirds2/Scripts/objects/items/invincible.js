@@ -17,34 +17,34 @@ var objects;
             _super.call(this, "invincible");
             // PRIVATE INSTANCE VARIABLES +++++++++++++++++
             this._firstSet = true;
-            this._speed.x -= 8; //item speed
-            this._reset(this._rightBounds);
+            this._speed.y = 5; //item speed
+            this._reset(this._topBounds);
             this.name = "invincible";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Invincible.prototype._checkBounds = function (value) {
             // check to see if the right of the item is outside the viewport         
-            if (this.x <= value) {
-                this._reset(this._rightBounds);
+            if (this.y >= value) {
+                this._reset(this._topBounds);
             }
         };
         // reset the item offscreen
         Invincible.prototype._reset = function (value) {
             if (this._firstSet) {
-                this.x = value + 4000;
-                this.y = Math.floor(Math.random() * 365);
+                this.x = Math.floor(Math.random() * 500);
+                this.y = value - 4000;
                 this._firstSet = false;
             }
             else {
-                this.x = value + 8000;
-                this.y = Math.floor(Math.random() * 365);
+                this.x = Math.floor(Math.random() * 500);
+                this.y = value - 7000;
             }
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         Invincible.prototype.update = function () {
             // scroll the enemy -5 px per frame
-            this.x += this._speed.x;
-            this._checkBounds(this._leftBounds);
+            this.y += this._speed.y;
+            this._checkBounds(this._bottomBounds);
         };
         return Invincible;
     })(objects.SpriteGameObject2);

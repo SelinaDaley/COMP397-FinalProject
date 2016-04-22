@@ -23,7 +23,7 @@ var scenes;
                 highScoreValue = scoreValue;
             }
             // add the background image
-            this._background = new createjs.Bitmap(assets.getResult("gameOver")); //"../../Assets/images/GameOverBackground3.png");
+            this._background = new createjs.Bitmap(assets.getResult("gameOver"));
             this.addChild(this._background);
             // assign and play the background sound
             this._endMusic = createjs.Sound.play("endMusic").setPan(0.0001).setVolume(0.2);

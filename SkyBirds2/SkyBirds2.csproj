@@ -119,7 +119,9 @@
     <Content Include="Scripts\core\_reference.js.map" />
     <Content Include="Scripts\lib\jquery-2.1.4.min.map" />
     <Content Include="Scripts\managers\collision.js.map" />
+    <Content Include="Scripts\managers\collision2.js" />
     <Content Include="Scripts\managers\shotcollision.js" />
+    <Content Include="Scripts\managers\shotcollision2.js" />
     <Content Include="Scripts\objects\asset.js.map" />
     <Content Include="Scripts\objects\background\background.js.map" />
     <Content Include="Scripts\objects\button.js.map" />
@@ -142,6 +144,7 @@
     <Content Include="Scripts\objects\spritegameobject.js" />
     <Content Include="Scripts\objects\spritegameobject2.js" />
     <Content Include="Scripts\scenes\end.js.map" />
+    <Content Include="Scripts\scenes\exit.js" />
     <Content Include="Scripts\scenes\menu.js.map" />
     <Content Include="Scripts\objects\items\life.js.map" />
     <Content Include="Scripts\objects\spritegameobject.js.map" />
@@ -157,6 +160,10 @@
     <Content Include="Scripts\scenes\nextlevel.js.map" />
     <Content Include="Scripts\objects\enemies\eye.js.map" />
     <Content Include="Scripts\objects\items\rocket.js.map" />
+    <Content Include="Scripts\objects\items\ashot.js.map" />
+    <Content Include="Scripts\objects\items\chicken.js.map" />
+    <Content Include="Scripts\objects\items\invincible.js.map" />
+    <Content Include="Scripts\managers\shotcollision2.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -257,7 +264,9 @@
     <TypeScriptCompile Include="Scripts\core\game.ts" />
     <TypeScriptCompile Include="Scripts\core\_reference.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
+    <TypeScriptCompile Include="Scripts\managers\collision2.ts" />
     <TypeScriptCompile Include="Scripts\managers\shotcollision.ts" />
+    <TypeScriptCompile Include="Scripts\managers\shotcollision2.ts" />
     <TypeScriptCompile Include="Scripts\objects\asset.ts" />
     <TypeScriptCompile Include="Scripts\objects\background\background.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
@@ -282,6 +291,7 @@
     <TypeScriptCompile Include="Scripts\scenes\bonus.ts" />
     <TypeScriptCompile Include="Scripts\scenes\complete.ts" />
     <TypeScriptCompile Include="Scripts\scenes\end.ts" />
+    <TypeScriptCompile Include="Scripts\scenes\exit.ts" />
     <TypeScriptCompile Include="Scripts\scenes\instructions.ts" />
     <TypeScriptCompile Include="Scripts\scenes\level1.ts" />
     <TypeScriptCompile Include="Scripts\scenes\level2.ts" />

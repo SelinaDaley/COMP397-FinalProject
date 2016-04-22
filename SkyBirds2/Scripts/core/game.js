@@ -15,6 +15,7 @@ var highScoreValue = 0;
 var level;
 var time = 0;
 var timeBonus = 0;
+var count = 0;
 // Game Scenes
 var menu;
 var level1;
@@ -25,6 +26,7 @@ var nextlevel;
 var instructions;
 var end;
 var complete;
+var exit;
 var atlas = {
     "images": [
         "../../Assets/images/atlas.png"
@@ -341,6 +343,13 @@ function changeScene() {
             instructions = new scenes.Instructions();
             currentScene = instructions;
             console.log("Starting INSTRUCTIONS Scene");
+            break;
+        case config.Scene.EXIT:
+            // show the EXIT scene
+            stage.removeAllChildren();
+            exit = new scenes.Exit();
+            currentScene = exit;
+            console.log("Starting EXIT Scene");
             break;
     }
 }

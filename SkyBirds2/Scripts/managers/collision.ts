@@ -47,7 +47,7 @@ module managers {
                     if (object.name === 'alien' || object.name === 'bomb' || object.name === "dark" || object.name === "horn" || object.name === "rocket") {
                         livesValue--; // lose a life
                         object._reset(config.Screen.WIDTH + 200);
-                        this._explosionSound = createjs.Sound.play("explosionSound");
+                        this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5);
 
                         // check if player has no more lives
                         if(livesValue <= 0) {
@@ -86,19 +86,19 @@ module managers {
                     // check if it's life hit
                     if (object.name === "life") {
                         livesValue++; // gain a life
-                        this._itemSound = createjs.Sound.play("itemSound");
+                        this._itemSound = createjs.Sound.play("itemSound").setPan(0.0001).setVolume(0.5);
                         object._reset(config.Screen.WIDTH + 200); // reset game object off screen
                     }
                     if (object.name === "invincible") {
                         this._chicken._reset(0);
                         object._reset(config.Screen.WIDTH + 200);
-                        this._itemSound = createjs.Sound.play("itemSound");
+                        this._itemSound = createjs.Sound.play("itemSound").setPan(0.0001).setVolume(0.5);
                     }
 
                     // check if it's an enemy hit
                     if (object.name === 'eShot') {
                         livesValue--; // lose a life
-                        this._explosionSound = createjs.Sound.play("explosionSound");
+                        this._explosionSound = createjs.Sound.play("explosionSound").setPan(0.0001).setVolume(0.5);
                         object._reset(config.Screen.WIDTH + 200); // reset game object off screen
 
                         // check if player has no more lives

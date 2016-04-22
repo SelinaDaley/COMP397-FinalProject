@@ -15,8 +15,10 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Instructions.prototype.start = function () {
-            this._text = "\n" +
-                "Move Up: Move the mouse up\n" +
+            this._text = "Stay alive as long as you can\n" +
+                "while killing enemies to rack \n" +
+                "                  up points!";
+            this._text2 = "Move Up: Move the mouse up\n" +
                 "Move Down: Move the mouse down\n" +
                 "Move Left: Move the mouse left\n" +
                 "Move Right: Move the mouse right\n" +
@@ -29,11 +31,14 @@ var scenes;
             // Loop engine sound forever
             this.introMusic.loop = -1;
             //Add Instruction Label
-            this._instructionsLabel = new objects.Label("INSTRUCTIONS", "60px Monotype Corsiva", "#000000", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 140, true);
+            this._instructionsLabel = new objects.Label("INSTRUCTIONS", "60px Monotype Corsiva", "#006400", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 140, true);
             this.addChild(this._instructionsLabel);
             //Add Text Label
-            this._textLabel = new objects.Label("" + this._text, "20px Calibri", "#000000", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 60, true);
+            this._textLabel = new objects.Label("" + this._text, "35px Calibri", "#000000", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y - 50, true);
             this.addChild(this._textLabel);
+            //Add Text Label 2
+            this._textLabel2 = new objects.Label("" + this._text2, "24px Calibri", "#000000", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y + 80, true);
+            this.addChild(this._textLabel2);
             // add the Back button to the INSTRUCTIONS scene
             this._backButton = new objects.Button("BackButton", config.Screen.CENTER_X * 0.83, config.Screen.CENTER_Y + 180, true);
             this.addChild(this._backButton);
